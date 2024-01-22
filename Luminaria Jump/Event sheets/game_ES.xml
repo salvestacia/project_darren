@@ -1,0 +1,721 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>game_ES</name>
+    <events>
+        <variable constant="0" name="highscore" sid="957420390327790" static="0" type="number">0</variable>
+        <variable constant="0" name="score" sid="846722661136018" static="0" type="number">0</variable>
+        <comment>pergerakan pemain</comment>
+        <event-block sid="376464523166936">
+            <conditions>
+                <condition behavior="Platform" id="0" name="Is moving" sid="658152496574746" type="pemain" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="229182801025399">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="425085388507618" type="pemain" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="985681642134408" type="pemain">
+                            <param id="0" name="Animation">&quot;berjalan&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="679268557224127">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="830589223319606" type="pemain">
+                            <param id="0" name="Object">jembatanTerbang</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="502204077450881" type="pemain">
+                            <param id="0" name="Animation">&quot;berjalan&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="317480464136945">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="133371537486824" type="pemain">
+                            <param id="0" name="Object">tanahdilangit</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="913981545933594" type="pemain">
+                            <param id="0" name="Animation">&quot;berjalan&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="580760979154198">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="848311335669619" type="pemain">
+                            <param id="0" name="Object">kotakPenghalang</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="487660691212424" type="pemain">
+                            <param id="0" name="Animation">&quot;berjalan&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="755733070339740">
+            <conditions>
+                <condition id="-22" name="Else" sid="462587929371646" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="758528186290955" type="pemain">
+                    <param id="0" name="Animation">&quot;diam&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="586073680713483">
+            <conditions>
+                <condition id="2" name="Key is down" sid="782738786442994" type="Keyboard">
+                    <param id="0" name="Key">39</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="299586050153658" type="pemain">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="637686643256879">
+            <conditions>
+                <condition id="2" name="Key is down" sid="164358408306635" type="Keyboard">
+                    <param id="0" name="Key">37</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="358730258487629" type="pemain">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="927730187065817">
+            <conditions>
+                <condition behavior="Platform" id="3" name="Is jumping" sid="788091211352557" type="pemain" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="684383695345801" type="pemain">
+                    <param id="0" name="Animation">&quot;lompat&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="984939607996427">
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" sid="814450523258967" type="pemain" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="724937181593449" type="pemain">
+                    <param id="0" name="Animation">&quot;diam&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>nyawa pemain dan kematian pemain</comment>
+        <event-block sid="318790111186351">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="688412430970803" type="pemain">
+                    <param id="0" name="Instance variable">nyawa</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="980974413783070" type="nyawa">
+                    <param id="0" name="Frame number">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="688624932621386">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="247169358069607" type="pemain">
+                    <param id="0" name="Instance variable">nyawa</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="141509343468227" type="nyawa">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="800916604209096">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="271991832572640" type="pemain">
+                    <param id="0" name="Instance variable">nyawa</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="377506444789750" type="nyawa">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="832483213113462">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="222645480632993" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="835107991509152" type="pemain">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="877814481595258" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="803401579939767" type="pemain">
+                            <param id="0" name="Object">efekLedakanMatiPemain</param>
+                            <param id="1" name="Layer">&quot;mainn&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="616188146094565" type="pemain" />
+                        <action id="-16" name="Wait" sid="713328293124684" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="323430430944115" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="5" name="Check item exists" sid="743332472123578" type="LocalStorage">
+                            <param id="0" name="Key">&quot;highscore&quot;</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="757393347652345" type="System">
+                            <param id="0" name="Layout">gameoverLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="653736358079924">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="931309130335411" type="pemain">
+                    <param id="0" name="Object">paku</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="345291835028878" type="pemain">
+                    <param id="0" name="&apos;On&apos; time">0.2</param>
+                    <param id="1" name="&apos;Off&apos; time">0.2</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="738106555012133" type="pemain">
+                    <param id="0" name="Instance variable">nyawa</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="536498385871517">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="782254647390488" type="pemain">
+                    <param id="0" name="Object">alienMuter</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="140188636018703" type="pemain">
+                    <param id="0" name="&apos;On&apos; time">0.2</param>
+                    <param id="1" name="&apos;Off&apos; time">0.2</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="112857604285867" type="pemain">
+                    <param id="0" name="Instance variable">nyawa</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="160462565103053">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="584867629235662" type="pemain">
+                    <param id="0" name="Object">alienNaikturun</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="912773198789553" type="pemain">
+                    <param id="0" name="&apos;On&apos; time">0.2</param>
+                    <param id="1" name="&apos;Off&apos; time">0.2</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="893121136757798" type="pemain">
+                    <param id="0" name="Instance variable">nyawa</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="957623879041278">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="995483975899340" type="pemain">
+                    <param id="0" name="Object">alienKanankiri</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="326771140818874" type="pemain">
+                    <param id="0" name="&apos;On&apos; time">0.2</param>
+                    <param id="1" name="&apos;Off&apos; time">0.2</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="450950092018775" type="pemain">
+                    <param id="0" name="Instance variable">nyawa</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="663378497209843">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="574606441708652" type="pemain">
+                    <param id="0" name="Object">hantu</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="329455164554345" type="pemain">
+                    <param id="0" name="&apos;On&apos; time">0.2</param>
+                    <param id="1" name="&apos;Off&apos; time">0.2</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="651696928992056" type="pemain">
+                    <param id="0" name="Instance variable">nyawa</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>pergerakan hantu</comment>
+        <event-block sid="939847729648805">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="381769059717378" type="hantu">
+                    <param id="0" name="Instance variable">movement</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;left&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="378538934197807" type="hantu">
+                    <param id="0" name="Control">0</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="835987925367599" type="hantu">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="478531599140222">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="144487989398890" type="hantu">
+                    <param id="0" name="Instance variable">movement</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;right&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="732584799516713" type="hantu">
+                    <param id="0" name="Control">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="412375604641155" type="hantu">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="989319537082013">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="339820471091598" type="hantu">
+                    <param id="0" name="Object">kotakPenghalang</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="877301175671516">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="417734647722033" type="hantu">
+                            <param id="0" name="Instance variable">movement</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;left&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="520185887421657" type="hantu">
+                            <param id="0" name="Instance variable">movement</param>
+                            <param id="1" name="Value">&quot;right&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="675439601378349">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="464651036151139" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="513513211498218" type="hantu">
+                            <param id="0" name="Instance variable">movement</param>
+                            <param id="1" name="Value">&quot;left&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>serangan pemain</comment>
+        <event-block sid="871026438210003">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="571715059694389" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="436099050218329" type="pemain">
+                    <param id="0" name="Object">seranganPemain</param>
+                    <param id="1" name="Layer">&quot;mainn&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="594058266249612">
+                    <conditions>
+                        <condition id="7" name="Is mirrored" sid="860522045867289" type="pemain" />
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="422737947507794" type="seranganPemain">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>kematian musuh</comment>
+        <event-block sid="634478418074595">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="662521891851559" type="seranganPemain">
+                    <param id="0" name="Object">hantu</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="524855172059854" type="hantu">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-16" name="Wait" sid="393847128619258" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="861381812968436" type="hantu">
+                    <param id="0" name="Object">efekLedakanMatiMusuh</param>
+                    <param id="1" name="Layer">&quot;mainn&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="855357111519090" type="hantu" />
+                <action id="-10" name="Add to" sid="868981984885797" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="226716686199474">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="742253596009206" type="seranganPemain">
+                    <param id="0" name="Object">alienMuter</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="224014284056971" type="alienMuter">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-16" name="Wait" sid="213452675035766" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="678499978086374" type="alienMuter">
+                    <param id="0" name="Object">efekLedakanMatiMusuh</param>
+                    <param id="1" name="Layer">&quot;mainn&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="520328923328494" type="alienMuter" />
+                <action id="-10" name="Add to" sid="194379157270960" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="207209113821028">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="643998741828394" type="seranganPemain">
+                    <param id="0" name="Object">alienNaikturun</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="842792506001618" type="alienNaikturun">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-16" name="Wait" sid="289955574110851" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="693803887167604" type="alienNaikturun">
+                    <param id="0" name="Object">efekLedakanMatiMusuh</param>
+                    <param id="1" name="Layer">&quot;mainn&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="847902810523910" type="alienNaikturun" />
+                <action id="-10" name="Add to" sid="149728278046862" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="127322619143101">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="638650784277363" type="seranganPemain">
+                    <param id="0" name="Object">alienKanankiri</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="754048946262928" type="alienKanankiri">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-16" name="Wait" sid="423945552034350" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="133482806833122" type="alienKanankiri">
+                    <param id="0" name="Object">efekLedakanMatiMusuh</param>
+                    <param id="1" name="Layer">&quot;mainn&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="407642605045139" type="alienKanankiri" />
+                <action id="-10" name="Add to" sid="387753868846116" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>ledakan serangan pemain</comment>
+        <event-block sid="245388901606955">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="419758357302327" type="seranganPemain">
+                    <param id="0" name="Object">hantu</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="169325087594548" type="seranganPemain">
+                    <param id="0" name="Object">efekLedakanSerangan</param>
+                    <param id="1" name="Layer">&quot;mainn&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="340793104605062" type="seranganPemain" />
+            </actions>
+        </event-block>
+        <event-block sid="218439867464491">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="634892815660043" type="seranganPemain">
+                    <param id="0" name="Object">alienMuter</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="919815443512238" type="seranganPemain">
+                    <param id="0" name="Object">efekLedakanSerangan</param>
+                    <param id="1" name="Layer">&quot;mainn&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="648917360035818" type="seranganPemain" />
+            </actions>
+        </event-block>
+        <event-block sid="437459535825610">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="259015414749141" type="seranganPemain">
+                    <param id="0" name="Object">alienNaikturun</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="701325608575666" type="seranganPemain">
+                    <param id="0" name="Object">efekLedakanSerangan</param>
+                    <param id="1" name="Layer">&quot;mainn&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="459942326405673" type="seranganPemain" />
+            </actions>
+        </event-block>
+        <event-block sid="234990639148788">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="906409819935585" type="seranganPemain">
+                    <param id="0" name="Object">alienKanankiri</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="335807825683728" type="seranganPemain">
+                    <param id="0" name="Object">efekLedakanSerangan</param>
+                    <param id="1" name="Layer">&quot;mainn&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="450539641042719" type="seranganPemain" />
+            </actions>
+        </event-block>
+        <event-block sid="539824424424537">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="819737521456526" type="seranganPemain">
+                    <param id="0" name="Object">kotakPenghalang</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="672664698904917" type="seranganPemain">
+                    <param id="0" name="Object">efekLedakanSerangan</param>
+                    <param id="1" name="Layer">&quot;mainn&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="637973821285744" type="seranganPemain" />
+            </actions>
+        </event-block>
+        <comment>score dan highscore</comment>
+        <event-block sid="188880819080918">
+            <conditions>
+                <condition id="9" name="On item exists" sid="570518662066033" type="LocalStorage">
+                    <param id="0" name="Key">&quot;highscore&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Get item" sid="492264583356220" type="LocalStorage">
+                    <param id="0" name="Key">&quot;highscore&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="505040844380810">
+            <conditions>
+                <condition id="1" name="On item get" sid="799112913906864" type="LocalStorage">
+                    <param id="0" name="Key">&quot;highscore&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="279955108955853" type="System">
+                    <param id="0" name="Variable">highscore</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="537583875996485">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="576251095228814" type="System">
+                    <param id="0" name="First value">score</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Second value">highscore</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="137750075814655" type="System">
+                    <param id="0" name="Variable">highscore</param>
+                    <param id="1" name="Value">score</param>
+                </action>
+                <action id="0" name="Set item" sid="569803601457798" type="LocalStorage">
+                    <param id="0" name="Key">highscore</param>
+                    <param id="1" name="Value">highscore</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="787288990562128">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="950055523055961" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="465226598621842" type="score">
+                    <param id="0" name="Text">&quot;score :&quot;&amp;score</param>
+                </action>
+                <action id="0" name="Set text" sid="468864035217531" type="highscore">
+                    <param id="0" name="Text">&quot;highscore :&quot;&amp;highscore</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="789737975730352">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="355030695030546" type="pemain">
+                    <param id="0" name="Object">koin</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="135252450989105" type="koin">
+                    <param id="0" name="Object">efekAmbilKoin</param>
+                    <param id="1" name="Layer">&quot;mainn&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="494253061267063" type="koin" />
+                <action id="-10" name="Add to" sid="148626252863996" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>penyelesaian game</comment>
+        <event-block sid="915301478154661">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="994682170615991" type="pemain">
+                    <param id="0" name="Object">kotakMisteri</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="928327691689806" type="kotakMisteri">
+                    <param id="0" name="Object">efekAmbilKoin</param>
+                    <param id="1" name="Layer">&quot;mainn&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action behavior="Platform" id="11" name="Set enabled" sid="923584754823254" type="pemain">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="299611049218286" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-3" name="Set position" sid="516862317653506" type="PemberitahuanLevelSelesai">
+                    <param id="0" name="X">517</param>
+                    <param id="1" name="Y">245</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="608103853826924" type="PemberitahuanLevelSelesai">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">10</param>
+                </action>
+                <action id="-16" name="Wait" sid="409623136386431" type="System">
+                    <param id="0" name="Seconds">10</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="818206622988951" type="System">
+                    <param id="0" name="Layout">homescreenLayout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="772311279244640">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="453914279461294" type="pemain">
+                    <param id="0" name="Object">kotakMisteri</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="228429408748668" type="hantu">
+                    <param id="0" name="Object">efekLedakanMatiMusuh</param>
+                    <param id="1" name="Layer">&quot;mainn&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="306785088854432" type="hantu" />
+                <action id="0" name="Spawn another object" sid="271479188287987" type="alienKanankiri">
+                    <param id="0" name="Object">efekLedakanMatiMusuh</param>
+                    <param id="1" name="Layer">&quot;mainn&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="941328728539573" type="alienKanankiri" />
+                <action id="0" name="Spawn another object" sid="132897054933570" type="alienMuter">
+                    <param id="0" name="Object">efekLedakanMatiMusuh</param>
+                    <param id="1" name="Layer">&quot;mainn&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="313195204912482" type="alienMuter" />
+                <action id="0" name="Spawn another object" sid="923981518754593" type="alienNaikturun">
+                    <param id="0" name="Object">efekLedakanMatiMusuh</param>
+                    <param id="1" name="Layer">&quot;mainn&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="195357256913079" type="alienNaikturun" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
