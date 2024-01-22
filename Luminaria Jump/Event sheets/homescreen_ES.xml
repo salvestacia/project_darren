@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>homescreen_ES</name>
+    <events>
+        <event-block sid="554095446388572">
+            <conditions>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="820248745977094" type="Mouse">
+                    <param id="0" name="Object">buttonPlay</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-7" name="Set size" sid="893110035065610" type="buttonPlay">
+                    <param id="0" name="Width">478.406</param>
+                    <param id="1" name="Height">281.225</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="422652813342839">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="738363045799264" type="Mouse">
+                    <param id="0" name="Object">buttonPlay</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-7" name="Set size" sid="321447242760075" type="buttonPlay">
+                    <param id="0" name="Width">550</param>
+                    <param id="1" name="Height">350</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="116452088752735">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="603764694553349" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">buttonPlay</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="499692270446217" type="System">
+                    <param id="0" name="Layout">gameLayout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="283641359362486">
+            <conditions>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="654885431868682" type="Mouse">
+                    <param id="0" name="Object">buttonExit</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-7" name="Set size" sid="138395989618934" type="buttonExit">
+                    <param id="0" name="Width">108.909</param>
+                    <param id="1" name="Height">108.909</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="438855572242934">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="540833049056832" type="Mouse">
+                    <param id="0" name="Object">buttonExit</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-7" name="Set size" sid="637270603166539" type="buttonExit">
+                    <param id="0" name="Width">150</param>
+                    <param id="1" name="Height">150</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="812756706173483">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="411362558993308" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">buttonExit</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Close" sid="765518936803123" type="Browser" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
