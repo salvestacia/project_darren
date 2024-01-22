@@ -1,0 +1,673 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Luminaria Jump (final)</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>3hlhywderfesu</unique-id>
+    <saved-with-version>28000</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1000</width>
+        <height>1000</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">Chrome</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Keyboard" sid="287328889847824">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="pemain" sid="289028566085044">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="lifetime" name="nyawa" sid="473493723942281" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Platform" sid="851267218724963">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="Flash" sid="126000378056365">
+                    <behavior id="Flash" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="191281906449739">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="ScrollTo" sid="372568597690468">
+                    <behavior id="scrollto" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="diam" pingpong="0" repeatcount="1" repeatto="0" sid="486469985815675" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ACER\Desktop\uprak\karakter game (pkwu)\karakter darren\karakter diam.png" />
+                </animation>
+                <animation framecount="2" loop="0" name="berjalan" pingpong="0" repeatcount="1" repeatto="0" sid="878866091984029" speed="8">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ACER\Desktop\uprak\karakter game (pkwu)\karakter darren\karakter angkat kaki kiri.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ACER\Desktop\uprak\karakter game (pkwu)\karakter darren\karakter angkat kaki kanan.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="lompat" pingpong="0" repeatcount="1" repeatto="0" sid="238842732252671" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\karakter darren\karakter lompat.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BGlangit" sid="691800582753505">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="964118218581394" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ACER\Desktop\lembah.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="tanah" sid="822806532305390">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="168875955296976">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="507624826681684" speed="5">
+                    <frame duration="1" hotspotX="0.52381" hotspotY="0.52381" original-source="C:\Users\ACER\Desktop\uprak\karakter game (pkwu)\Tiles\tile_0123.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="paku" sid="859329401268136">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="940427540353315" speed="5">
+                    <frame duration="1" hotspotX="0.501767" hotspotY="0.5" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\karakter darren\paku-removebg-preview.png">
+                        <collision-poly>
+                            <point x="0.180212" y="0.140449" />
+                            <point x="0.805654" y="0.134831" />
+                            <point x="0.858657" y="0.842697" />
+                            <point x="0.498233" y="0.842697" />
+                            <point x="0.106007" y="0.842697" />
+                            <point x="0.137809" y="0.544944" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="nyawa" sid="887547108340528">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="327140904501784" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\karakter darren\mati-removebg-preview.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\karakter darren\sekarat-removebg-preview.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\karakter darren\nyawaa-removebg-preview.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="alienMuter" sid="246623515751011">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="765725988048050">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Sine2" sid="777724999721890">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Flash" sid="168334343353741">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="805181468205625" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501341" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\karakter darren\alien-removebg-preview.png">
+                        <collision-poly>
+                            <point x="0.270149" y="0.402145" />
+                            <point x="0.401493" y="0.176944" />
+                            <point x="0.598507" y="0.171582" />
+                            <point x="0.758209" y="0.447721" />
+                            <point x="0.756717" y="0.785522" />
+                            <point x="0.446269" y="0.882037" />
+                            <point x="0.232836" y="0.745308" />
+                            <point x="0.232836" y="0.49866" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="hantu" sid="783605984929656">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="movement" sid="268360043309950" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Platform" sid="669269791663558">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="Flash" sid="719834567423234">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="157916674765271" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501597" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\karakter darren\hantu-removebg-preview.png">
+                        <collision-poly>
+                            <point x="0.1" y="0.121406" />
+                            <point x="0.496875" y="5.58794e-009" />
+                            <point x="0.859375" y="0.13738" />
+                            <point x="0.96875" y="0.498403" />
+                            <point x="0.965625" y="0.964856" />
+                            <point x="0.484375" y="0.964856" />
+                            <point x="0.034375" y="0.964856" />
+                            <point x="0.01875" y="0.498403" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="jembatanTerbang" sid="505757893482092">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="667501585466518">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Jumpthru" sid="206393006612489">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="219890974527157" speed="5">
+                    <frame duration="1" hotspotX="0.52381" hotspotY="0.52381" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\Tiles\tile_0043.png">
+                        <collision-poly>
+                            <point x="0.047619" y="0.625" />
+                            <point x="0.47619" y="0.619048" />
+                            <point x="0.946428" y="0.619048" />
+                            <point x="0.952381" y="0.952381" />
+                            <point x="0.47619" y="1" />
+                            <point x="0.047619" y="0.952381" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="kotakPenghalang" sid="196232251143158">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="418557700129648">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="339274140239871" speed="5">
+                    <frame duration="1" hotspotX="0.52381" hotspotY="0.52381" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\Tiles\tile_0191.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="seranganPemain" sid="542484149891106">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="365948821395326">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="847400159835716">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="706479732667811" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\karakter darren\serangan karakter.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.333333" />
+                            <point x="0.703125" y="0.338542" />
+                            <point x="0.822917" y="0.484375" />
+                            <point x="0.697917" y="0.625" />
+                            <point x="0.5" y="0.625" />
+                            <point x="0.416667" y="0.583333" />
+                            <point x="0.229167" y="0.479167" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="efekLedakanMatiMusuh" sid="807382666197825">
+            <plugin id="Particles" />
+            <texture original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\Tiles\tile_0469.png" />
+        </object-type>
+        <object-type name="efekLedakanSerangan" sid="313265036831378">
+            <plugin id="Particles" />
+            <texture original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\Tiles\tile_0420.png" />
+        </object-type>
+        <object-type name="tanahdilangit" sid="972715043615483">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="110754889594154">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="186071707742469" speed="5">
+                    <frame duration="1" hotspotX="0.52381" hotspotY="0.52381" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\Tiles\tile_0121.png">
+                        <collision-poly>
+                            <point x="0.047619" y="0.047619" />
+                            <point x="0.47619" y="0" />
+                            <point x="0.952381" y="0.047619" />
+                            <point x="1" y="0.47619" />
+                            <point x="0.952381" y="0.952381" />
+                            <point x="0.47619" y="1" />
+                            <point x="0.047619" y="0.952381" />
+                            <point x="0" y="0.47619" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="langitTambahan" sid="949527295145799">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="932307705658521" speed="5">
+                    <frame duration="1" hotspotX="0.501023" hotspotY="0.501577" original-source="C:\Users\ACER\Desktop\soraa.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="awan" sid="992748166476998">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="932393338456933" speed="5">
+                    <frame duration="1" hotspotX="0.52381" hotspotY="0.52381" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\Tiles\tile_0047.png">
+                        <collision-poly>
+                            <point x="0.952381" y="0.952381" />
+                            <point x="0.47619" y="0.666667" />
+                            <point x="0.190476" y="0.809524" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="alienNaikturun" sid="865849885841061">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="121609581394838">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Flash" sid="631460319317535">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="185515473620990" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501341" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\karakter darren\alien-removebg-preview.png">
+                        <collision-poly>
+                            <point x="0.223881" y="0.41555" />
+                            <point x="0.39403" y="0.163539" />
+                            <point x="0.608956" y="0.187667" />
+                            <point x="0.758209" y="0.461126" />
+                            <point x="0.758209" y="0.721179" />
+                            <point x="0.646268" y="0.849866" />
+                            <point x="0.328358" y="0.849866" />
+                            <point x="0.220896" y="0.686327" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="alienKanankiri" sid="818579700303086">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="627857988095430">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Flash" sid="855163352544486">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="408810289065819" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501341" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\karakter darren\alien-removebg-preview.png">
+                        <collision-poly>
+                            <point x="0.374626" y="0.174263" />
+                            <point x="0.591044" y="0.182306" />
+                            <point x="0.694029" y="0.319035" />
+                            <point x="0.758209" y="0.466488" />
+                            <point x="0.767164" y="0.828418" />
+                            <point x="0.637312" y="0.844504" />
+                            <point x="0.235821" y="0.839142" />
+                            <point x="0.232836" y="0.49866" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="tanahPanjangdilangit" sid="544209452915245">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="924316390201499">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="700209025038247" speed="5">
+                    <frame duration="1" hotspotX="0.52381" hotspotY="0.52381" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\Tiles\tile_0123.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="score" sid="654242514335262">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="highscore" sid="231135232032811">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="LocalStorage" sid="738033701201826">
+            <plugin id="LocalStorage" />
+        </object-type>
+        <object-type name="efekLedakanMatiPemain" sid="254337641429044">
+            <plugin id="Particles" />
+            <texture original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\Tiles\tile_0202.png" />
+        </object-type>
+        <object-type name="koin" sid="928142303990766">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="609449817245462">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="347283302250741" speed="5">
+                    <frame duration="1" hotspotX="0.52381" hotspotY="0.52381" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\Tiles\tile_0078.png">
+                        <collision-poly>
+                            <point x="0.285714" y="0.285714" />
+                            <point x="0.47619" y="0.238095" />
+                            <point x="0.714286" y="0.285714" />
+                            <point x="0.761905" y="0.47619" />
+                            <point x="0.714286" y="0.714286" />
+                            <point x="0.47619" y="0.761905" />
+                            <point x="0.285714" y="0.714286" />
+                            <point x="0.238095" y="0.47619" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="efekAmbilKoin" sid="179886522481528">
+            <plugin id="Particles" />
+            <texture original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\Tiles\tile_0209.png" />
+        </object-type>
+        <object-type name="hiasanPrajurit" sid="426419489169855">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="334368797247779" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\karakter darren\prajurit-removebg-preview.png">
+                        <collision-poly>
+                            <point x="0.25" y="0.25" />
+                            <point x="0.5" y="0.125" />
+                            <point x="0.625" y="0.375" />
+                            <point x="0.625" y="0.625" />
+                            <point x="0.5" y="0.6875" />
+                            <point x="0.375" y="0.625" />
+                            <point x="0.375" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="petunjukBermain" sid="656304638271827">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="342003378171422" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\karakter darren\awan_ngomong-removebg-preview.png">
+                        <collision-poly>
+                            <point x="0.0641892" y="0.109195" />
+                            <point x="0.5" y="0.0402299" />
+                            <point x="0.918919" y="0.137931" />
+                            <point x="0.929054" y="0.5" />
+                            <point x="0.875" y="0.787356" />
+                            <point x="0.5" y="0.827586" />
+                            <point x="0.114865" y="0.804598" />
+                            <point x="0.0371622" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="kotakMisteri" sid="631610879126511">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="774523107016604">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="848683495438889" speed="5">
+                    <frame duration="1" hotspotX="0.52381" hotspotY="0.52381" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\Tiles\tile_0130.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PemberitahuanLevelSelesai" sid="756908940430226">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Flash" sid="773652158647360">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="homeBG" sid="576473042404728">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="485849692863212" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\Backgrounds\homebg.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="judulGame" sid="880467823329952">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="720248896831846">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="197027070328290" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\judul-removebg-preview.png">
+                        <collision-poly>
+                            <point x="0.128378" y="0.12069" />
+                            <point x="0.564189" y="0.356322" />
+                            <point x="0.918919" y="0.281609" />
+                            <point x="0.959459" y="0.5" />
+                            <point x="0.878378" y="0.827586" />
+                            <point x="0.5" y="0.890805" />
+                            <point x="0.0641892" y="0.890805" />
+                            <point x="0" y="0.488506" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="buttonPlay" sid="937400957238212">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="539953397642971" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\play-removebg-preview.png">
+                        <collision-poly>
+                            <point x="0.513514" y="0.235632" />
+                            <point x="0.601351" y="0.344828" />
+                            <point x="0.510135" y="0.468391" />
+                            <point x="0.363176" y="0.603448" />
+                            <point x="0.361486" y="0.0977011" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="keteranganTombolPlay" sid="632560216625408">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Sine" sid="815806946184996">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Mouse" sid="292560835769415">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="gameoverBG" sid="394378023831140">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="928710721347904" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\Backgrounds\homebg.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="tulisanGameover" sid="262312641841195">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="247002373822943">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="433435227089676" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\gameover-removebg-preview.png">
+                        <collision-poly>
+                            <point x="0.0506757" y="6.89179e-008" />
+                            <point x="0.5" y="0.12069" />
+                            <point x="0.793919" y="0.0862069" />
+                            <point x="0.75" y="0.436782" />
+                            <point x="0.655406" y="0.821839" />
+                            <point x="0.0236487" y="0.821839" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="buttonRetry" sid="354038390223525">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="644182307109142" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\retry_button-removebg-preview.png">
+                        <collision-poly>
+                            <point x="0.347973" y="0.356322" />
+                            <point x="0.466216" y="0.241379" />
+                            <point x="0.614865" y="0.37931" />
+                            <point x="0.628378" y="0.609195" />
+                            <point x="0.510135" y="0.793103" />
+                            <point x="0.327703" y="0.649425" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="keteranganTombolRetry" sid="858703977617301">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="logoGame" sid="536094990602465">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="961403834714749">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="827538630251335" speed="5">
+                    <frame duration="1" hotspotX="0.52381" hotspotY="0.52381" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\Tiles\tile_0866.png">
+                        <collision-poly>
+                            <point x="0.238095" y="0.238095" />
+                            <point x="0.47619" y="0.0952381" />
+                            <point x="0.761905" y="0.238095" />
+                            <point x="0.904762" y="0.47619" />
+                            <point x="0.761905" y="0.761905" />
+                            <point x="0.47619" y="0.904762" />
+                            <point x="0.238095" y="0.761905" />
+                            <point x="0.0952381" y="0.47619" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="buttonExit" sid="592066345337033">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="269936797524616" speed="5">
+                    <frame duration="1" hotspotX="0.521739" hotspotY="0.521739" original-source="C:\Users\ACER\Desktop\uprak\assets game (pkwu)\Tiles\tile_0253.png">
+                        <collision-poly>
+                            <point x="0.130435" y="0.130435" />
+                            <point x="0.478261" y="0.0434783" />
+                            <point x="0.869565" y="0.130435" />
+                            <point x="0.956522" y="0.478261" />
+                            <point x="0.652174" y="0.652174" />
+                            <point x="0.478261" y="0.956522" />
+                            <point x="0.347826" y="0.652174" />
+                            <point x="0.0434783" y="0.478261" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Browser" sid="389553559586115">
+            <plugin id="Browser" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>homescreenLayout.xml</layout>
+        <layout>gameLayout.xml</layout>
+        <layout>gameoverLayout.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>game_ES.xml</event-sheet>
+        <event-sheet>homescreen_ES.xml</event-sheet>
+        <event-sheet>gameover_ES.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="2" />
+        <global-instance type="LocalStorage" uid="95" />
+        <global-instance type="Mouse" uid="125" />
+        <global-instance type="Browser" uid="132" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="2">gameLayout</layout>
+        <layout active="1" order="0">homescreenLayout</layout>
+        <layout order="4">gameoverLayout</layout>
+        <event-sheet order="3">game_ES</event-sheet>
+        <event-sheet order="1">homescreen_ES</event-sheet>
+        <event-sheet order="5">gameover_ES</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1" />
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/pemain/" />
+        <folder expanded="1" path="animation-folder/BGlangit/" />
+        <folder expanded="1" path="animation-folder/tanah/" />
+        <folder expanded="1" path="animation-folder/paku/" />
+        <folder expanded="1" path="animation-folder/nyawa/" />
+        <folder expanded="1" path="animation-folder/alienMuter/" />
+        <folder expanded="1" path="animation-folder/hantu/" />
+        <folder expanded="1" path="animation-folder/jembatanTerbang/" />
+        <folder expanded="1" path="animation-folder/kotakPenghalang/" />
+        <folder expanded="1" path="animation-folder/seranganPemain/" />
+        <folder expanded="1" path="animation-folder/tanahdilangit/" />
+        <folder expanded="1" path="animation-folder/langitTambahan/" />
+        <folder expanded="1" path="animation-folder/awan/" />
+        <folder expanded="1" path="animation-folder/alienNaikturun/" />
+        <folder expanded="1" path="animation-folder/alienKanankiri/" />
+        <folder expanded="1" path="animation-folder/tanahPanjangdilangit/" />
+        <folder expanded="1" path="animation-folder/koin/" />
+        <folder expanded="1" path="animation-folder/hiasanPrajurit/" />
+        <folder expanded="1" path="animation-folder/petunjukBermain/" />
+        <folder expanded="1" path="animation-folder/kotakMisteri/" />
+        <folder expanded="1" path="animation-folder/homeBG/" />
+        <folder expanded="1" path="animation-folder/judulGame/" />
+        <folder expanded="1" path="animation-folder/buttonPlay/" />
+        <folder expanded="1" path="animation-folder/gameoverBG/" />
+        <folder expanded="1" path="animation-folder/tulisanGameover/" />
+        <folder expanded="1" path="animation-folder/buttonRetry/" />
+        <folder expanded="1" path="animation-folder/logoGame/" />
+        <folder expanded="1" path="animation-folder/buttonExit/" />
+    </folders-expanded>
+</c2uistate>
